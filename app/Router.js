@@ -62,14 +62,19 @@ function handleRoute(res, renderProps) {
 
 function serverMiddleware(req, res) {
   match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
+
     if (error) {
+      // console.log(' \t handleError(error)', error);
       handleError(error);
     } else if (redirectLocation) {
+      // console.log(' \t handleRedirect(res, redirectLocation)', redirectLocation);
       handleRedirect(res, redirectLocation);
     } else if (renderProps) {
+      // console.log(' \t handleRoute(res, renderProps)', renderProps);
       handleRoute(res, renderProps);
     } else {
       // This should actually never happen, as Routes.js has a catch-all '*' path.
+      // console.log(' \t res.sendStatus(404)');
       res.sendStatus(404);
     }
   });
