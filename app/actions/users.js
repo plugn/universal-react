@@ -2,6 +2,7 @@ export const USERS_INVALID = 'USERS_INVALID';
 export const USERS_FETCHING = 'USERS_FETCHING';
 export const USERS_FETCHED = 'USERS_FETCHED';
 export const USERS_FETCH_FAILED = 'USERS_FETCH_FAILED';
+export const PROFILE_CLICK = 'PROFILE_CLICK';
 
 function fetchUsers() {
   return (dispatch) => {
